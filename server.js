@@ -13,7 +13,7 @@ app.use(cors());
 
 connectDB();
 
-app.use("/api/v1/", require("./routes/user.route"));
+app.use("/api/v1/auth", require("./routes/user.route"));
 app.use("/api/v1/", require("./routes/product.route"));
 
 app.get("/test", (req, res) => {
@@ -22,6 +22,6 @@ app.get("/test", (req, res) => {
 
 const port = process.env.PORT || 5000;
 
-app.listen(4000, () => {
+app.listen(port, () => {
   console.log(`Server is running on port : http://localhost:${3000}`);
 });
